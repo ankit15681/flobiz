@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -36,3 +36,481 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: max-content;
+justify-content: space-between;
+}
+
+.navbar h4{
+  margin: 7px 40px;
+} */
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800");
+html {
+  --duration: 0.5s;
+  --dark: #2c3e50;
+  --white: #ffffff;
+  --off-white: #ecf0f1;
+  --accent: #e17b5f;
+  /* overflow: hidden; */
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x:hidden;
+}
+
+#root {
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+  /* background: var(--off-white); */
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  position: relative;
+  padding: 0.75em 1em;
+  background: white;
+  color: var(--white);
+  justify-content: space-between;
+}
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  color: black;
+  padding-right: 2em;
+}
+.menu1 {
+  display: block;
+}
+.menu-items1 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  color: black;
+  padding-right: 2em;
+}
+.menu-item {
+  padding: 0.5em 0.75em;
+  margin-right: 0.25em;
+  font-weight: 600;
+  font-size: 1em;
+  transition: color 0.06s linear;
+  user-select: none;
+}
+.menu-item:hover {
+  cursor: pointer;
+  color: var(--accent);
+}
+.menu-item--selected {
+  color: var(--accent);
+}
+.menu-dash {
+  height: 4px;
+  width: 40px;
+  border-radius: 2px;
+  background: var(--accent);
+  position: absolute;
+  bottom: 0;
+  transition: transform var(--duration), width 0.1s ease-in;
+}
+
+.banner {
+  display: flex;
+  background-color: #fbf7f4;
+  width: 100%;
+  height: 400px;
+  justify-content: space-around;
+  padding: 50px 100px;
+}
+.formContainer {
+  flex-grow: 1;
+  background-color: white;
+  justify-self: flex-end;
+  margin-right: 200px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+
+}
+.headlines {
+  flex-grow: 3;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.headlines h2,h3{
+  margin-left: 0;
+  color: #3d3d3d;
+
+}
+
+
+.headlines h4 {
+  margin-top: 50px;
+}
+
+.form h1 {
+  color: #3d3d3d;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 10px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 30px 50px;
+}
+
+
+input {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+}
+input[type="date"] {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 7px;
+  width: 100%;
+}
+select {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: white;
+  width: 100%;
+}
+
+label {
+  color: gray;
+  display: block;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.error {
+  color: red;
+  font-family: sans-serif;
+  font-size: 12px;
+  height: 30px;
+}
+
+.submitButton {
+  background-color: #6976d9;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 20px 0px;
+}
+
+#username {
+  align-self: flex-start;
+}
+
+#errmsg {
+  display: none;
+  color: red;
+}
+
+.items-container {
+  display: flex;
+  background-color: white;
+  height: 100%;
+}
+.item-list {
+  flex-grow: 2;
+  background-color: #f1f3f3;
+  /* background-color: #6976d9; */
+  /* padding: 0.5em 2em; */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* height: 400px; */
+  border: 1px solid #d9d9d9;
+}
+.item-list h4 {
+  border-bottom: 1px solid #d9d9d9;
+  margin: 0;
+  padding: 1.25em 1.5em;
+    background-color: white;
+
+}
+
+.item-create {
+  flex-grow: 1;
+  /* background-color: aqua; */
+  box-sizing: border-box;
+  /* height: 400px; */
+  border: 1px solid #d9d9d9;
+}
+.item-create h4 {
+  border-bottom: 1px solid #d9d9d9;
+  margin: 0;
+  padding: 1.25em 1.5em;
+}
+.itemsListContainer {
+  /* margin-top: -1.3em; */
+  width: 96.75%;
+  padding: 1em 1em;
+  justify-content: center;
+  background-color: #f1f3f3;
+}
+
+.createItemContainer {
+}
+
+.itemNameCode {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  padding: 1em 1em;
+  width: 90%;
+}
+.itemNameCode label {
+  flex-grow: 1;
+  margin-right: 10px;
+  /* width: 50%; */
+}
+.createItemContainer h3 {
+  background-color: #ececec;
+  padding: 0.5em 1em;
+}
+.saveItemButton {
+  display: flex;
+  width: 90%;
+  padding: 1em;
+}
+input[type="search"]{
+  width: max-content;
+}
+
+table {
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  height: 100%;
+  margin-top: 1em;
+}
+
+th {
+  border-bottom: 1px solid #d9d9d9;
+  height: 3em;
+  font-size: small;
+  font-weight: 500;
+}
+
+td {
+  text-align: center;
+  background-color: white;
+}
+td,
+th {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+}
+td {
+  border-bottom: 1px solid #d9d9d9;
+  /* padding: 1em; */
+}
+#tableItems {
+  border-collapse: collapse;
+}
+.searchContainer
+{
+  display: flex;
+}
+.searchContainer img{
+  /* display: block; */
+  background-color: white;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+#search{
+  padding-left: 40px;
+}
+ .nodataIcon{
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: 300px;
+  /* display: flex; */
+}
+.bodyContainer {
+padding: 3em;
+}
+.stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #e17b5f;
+  margin-bottom: 50px;
+}
+.statData{
+  align-content: center;
+}
+.trialPromo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6em;
+}
+#freePromo {
+  color: #e17b5f
+
+}
+.pricingContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.devicesCont{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pricingBox
+{
+  width: 25%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.pricingBox img,h2,h5,h4,ul{
+  margin-left: 10px;
+} 
+.devicesCont h5 {
+  margin-left: 1em;
+} 
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 4em;
+  padding-top: 4em;
+}
+.fsection{
+  display: flex;
+  flex-direction: column;
+}
+.socialContainer1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.iconWtext1{
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+  height: 40px !important;
+  /* align-items: center; */
+  box-sizing: border-box;
+  /* border: 1px solid gray; */
+  background-color: rgb(237, 250, 237);
+  height: max-content;
+  padding:5px 5px;
+  height: min-content;
+
+}
+.iconWtext2{
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+  height: 40px !important;
+  align-items: center;
+  box-sizing: border-box;
+  /* border: 1px solid gray; */
+  background-color: rgb(231, 231, 255);
+  height: max-content;
+  padding:5px 10px;
+  height: min-content;
+
+}
+.iconWtext p{
+    margin: 0;
+  margin-left: 5px;
+}
+.footerMenu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.footerMenu div{
+  margin-right: 10px;
+}
+.fsection h3{
+  color:#e17b5f
+}
+
+.blue{
+color: #6976d9;
+}
+.gold{
+color: gold ;
+background-color: rgb(253, 247, 210);
+}
+.orange {
+color: orange;
+}
+
+.blue h5,small,ul{
+color: gray;
+}
+.orange h5,small,ul{
+color: gray;
+}
+.gold h5,small,ul{
+color: gray;
+}
+.orange .devicesCont {
+background-color: rgb(255, 217, 147);
+}
+.gold .devicesCont {
+background-color: rgb(226, 206, 90);
+border-color: rgb(236, 217, 106);
+
+}
+.blue .devicesCont {
+background-color:#b7bdf1;
+}
+

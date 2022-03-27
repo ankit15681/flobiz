@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Items from "./components/Items";
+import Home from "./components/Home";
+import useToken from "./useToken";
 
 function App() {
+  const { token } = useToken();
+  let shouldRedirect = false;
+  if (!token) {
+    shouldRedirect = true;
+    return <Home />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="app">
+        <BrowserRouter>
+          <Routes>
+            {/* <Route exact path="/" element={<Home />}></Route> */}
+            {/* <Route exact path="/items" element={<Items />}></Route> */}
+            <Route
+              exact
+              path="/"
+              element={
+                !shouldRedirect ? <Navigate replace to="/items" /> : <Home />
+              }
+            />
+            <Route
+              exact
+              path="/items"
+              element={shouldRedirect ? <Navigate replace to="/" /> : <Items />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
   );
 }
 
