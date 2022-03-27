@@ -24,11 +24,9 @@ export default function Items() {
     if (
       !(Object.keys(selected).length === 0 && selected.constructor === Object)
     ) {
-      console.log("se;e", selected);
       const newItems = items.filter((item) => selected !== item);
       setItems([...newItems, formData]);
     } else {
-      console.log("else");
       if (items) {
         const newItems = [...items, formData];
         setItems(newItems);
@@ -38,6 +36,8 @@ export default function Items() {
     }
     setFormData({});
     setSelected({});
+    window.location.reload(false);
+
   };
   const handleChange = (e) => {
     e.preventDefault();
